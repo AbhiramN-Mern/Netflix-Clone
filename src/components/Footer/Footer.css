@@ -23,3 +23,53 @@
     color: gray;
     font-size: 14px;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 25px 3%;
+  }
+  
+  .footer-icons {
+    gap: 15px;
+  }
+  
+  .footer-icons img {
+    width: 25px;
+  }
+  
+  .footer ul {
+    grid-template-columns: auto auto;
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+  
+  .copyright-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 3%;
+  }
+  
+  .footer-icons {
+    gap: 12px;
+    margin: 30px 0;
+  }
+  
+  .footer-icons img {
+    width: 20px;
+  }
+  
+  .footer ul {
+    grid-template-columns: auto;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .copyright-text {
+    font-size: 11px;
+  }
+}

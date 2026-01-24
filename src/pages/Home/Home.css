@@ -62,3 +62,99 @@
  .more-cards{
    padding-left: 6%;
  }
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .caption-img {
+    max-width: 350px;
+  }
+  
+  .hero-caption p {
+    font-size: 15px;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+  }
+  
+  .caption-img {
+    width: 80%;
+    max-width: 280px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-caption {
+    padding-left: 4%;
+    bottom: 20px;
+  }
+  
+  .hero-caption p {
+    font-size: 14px;
+    max-width: 500px;
+    margin-bottom: 15px;
+  }
+  
+  .hero-btns {
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+  
+  .hero-btns .btn {
+    padding: 6px 15px;
+    font-size: 13px;
+  }
+  
+  .hero-btns .btn img {
+    width: 20px;
+  }
+  
+  .more-cards {
+    padding-left: 4%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 50vh;
+  }
+  
+  .caption-img {
+    width: 70%;
+    max-width: 200px;
+    margin-bottom: 15px;
+  }
+  
+  .hero-caption {
+    padding-left: 3%;
+    bottom: 15px;
+  }
+  
+  .hero-caption p {
+    font-size: 12px;
+    max-width: 400px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .hero-btns {
+    gap: 6px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .hero-btns .btn {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+  
+  .hero-btns .btn img {
+    width: 18px;
+  }
+  
+  .more-cards {
+    padding-left: 3%;
+  }
+}

@@ -21,3 +21,49 @@
     .player iframe {
         border-radius: 10px;
     }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .Player {
+    height: 100vh;
+  }
+  
+  .player-info {
+    width: 95%;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .Player img {
+    width: 40px;
+  }
+  
+  .Player iframe {
+    width: 95% !important;
+    height: 80% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .Player {
+    height: 100vh;
+  }
+  
+  .player-info {
+    width: 95%;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 12px;
+  }
+  
+  .Player img {
+    width: 35px;
+    top: 15px;
+    left: 15px;
+  }
+  
+  .Player iframe {
+    width: 98% !important;
+    height: 75% !important;
+  }
+}
