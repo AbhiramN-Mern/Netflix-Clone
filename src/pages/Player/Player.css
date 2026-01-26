@@ -104,6 +104,17 @@
 .budget-revenue strong {
     color: #e50914;
 }
+.watchLater{
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {

@@ -82,6 +82,11 @@
     background-color: #141414;
     transition: background-color 500ms ease;
 }
+.watchList{
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {

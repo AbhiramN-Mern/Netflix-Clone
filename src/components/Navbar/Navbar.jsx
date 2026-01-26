@@ -6,6 +6,7 @@ import bell_icon from '../../assets/bell_icon.svg'
 import profile_img from '../../assets/profile_img.png'
 import caret_icon from '../../assets/caret_icon.svg'
 import { logout } from '../../firebase'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   const navref=useRef()
@@ -33,7 +34,7 @@ function Navbar() {
 
       <div className='navbar-right'>
         <img src={searchIcon} alt="search icon" className="icons" />
-        <p>Children</p>
+        <Link to="/watchlist"><p className='watchList'>WatchList</p></Link>
         <img src={bell_icon} alt="bell icon" className="icons" />
 
         <div className="navbar-profile">

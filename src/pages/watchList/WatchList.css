@@ -1,0 +1,131 @@
+.watch-list {
+    padding: 60px 4%;
+    min-height: 100vh;
+    background: black;
+    color: white;
+}
+
+.watch-list h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.watch-list-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.watch-list-card {
+    background: #191919;
+    border-radius: 6px;
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.watch-list-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(229, 9, 20, 0.3);
+}
+
+.watch-list-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.watch-list-card p {
+    font-size: 12px;
+    color: #b3b3b3;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.remove-btn {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.remove-btn:hover {
+    background: #c40812;
+}
+
+.empty-watchlist {
+    text-align: center;
+    padding: 60px 20px;
+    color: #b3b3b3;
+}
+
+.empty-watchlist p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.browse-btn {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.browse-btn:hover {
+    background: #c40812;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .watch-list {
+        padding: 40px 3%;
+    }
+
+    .watch-list h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .watch-list-items {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .watch-list {
+        padding: 30px 3%;
+    }
+
+    .watch-list h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .watch-list-items {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 12px;
+    }
+
+    .watch-list-card {
+        padding: 12px;
+    }
+
+    .watch-list-card h3 {
+        font-size: 14px;
+    }
+
+    .watch-list-card p {
+        font-size: 11px;
+    }
+}

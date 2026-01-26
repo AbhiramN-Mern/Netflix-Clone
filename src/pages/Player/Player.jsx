@@ -3,7 +3,13 @@ import "./Player.css"
 import back_arrow_icon from '../../assets/back_arrow_icon.png'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { useWatchList } from '../../context/watchListContext.jsx'
+import { toast } from 'react-toastify'
 function Player() {
+  const {watchList,addToWatchList,removeFromWatchList}=useWatchList()
+  console.log(watchList)
+  
+
   const {id} = useParams()
   const [apiData, setApiData] = useState({
     name: "",
@@ -74,6 +80,13 @@ useEffect(()=>{
       <div className="movie-details">
         <div className="details-container">
           <h1>{movieDetails.title}</h1>
+          <button className='watchLater' onClick={()=>{
+            addToWatchList({id:id, title: movieDetails.title, overview: movieDetails.overview, image: movieDetails.poster_path})
+            toast.success(`${movieDetails.title} added to watchlist!`, {
+              position: "bottom-right",
+              autoClose: 2000,
+            })
+          }}>add to watchList</button>
           
           <div className="movie-meta">
             <span className="rating"> {movieDetails.vote_average ? parseFloat(movieDetails.vote_average).toFixed(1) : 'N/A'}/10</span>
