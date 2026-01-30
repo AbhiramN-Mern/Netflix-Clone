@@ -36,7 +36,6 @@ function Navbar() {
         <img src={searchIcon} alt="search icon" className="icons" />
         <Link to="/watchlist"><p className='watchList'>WatchList</p></Link>
         <img src={bell_icon} alt="bell icon" className="icons" />
-
         <div className="navbar-profile">
           <img src={profile_img} alt="profile icon" className="profile" />
           <img src={caret_icon} alt="caret icon" className="icons" />

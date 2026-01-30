@@ -3,6 +3,7 @@ import "./Login.css"
 import logo from '../../assets/logo.png'
 import netflix_spinner from '../../assets/netflix_spinner.gif'
 import { signup, login } from '../../firebase'
+import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 
 function Login() {
@@ -13,10 +14,30 @@ function Login() {
   let [password,setPassword]=useState("")
   let [loading,setLoading]=useState(false)
   const navigate = useNavigate()
+  const [error,setError]=useState("")
 
   const user_auth=async(e)=>{
-    e.preventDefault()
+    if (e && e.preventDefault) e.preventDefault()
+    setError("")
     setLoading(true)
+
+    // basic client-side validation
+    if(signState==="sign UP"){
+      if(!name.trim() || !email.trim() || !password){
+        const msg = "Please fill all fields";
+        setError(msg); toast.error(msg); setLoading(false); return
+      }
+      if(password.length < 6){
+        const msg = "Password should be at least 6 characters";
+        setError(msg); toast.error(msg); setLoading(false); return
+      }
+    } else {
+      if(!email.trim() || !password){
+        const msg = "Please enter email and password";
+        setError(msg); toast.error(msg); setLoading(false); return
+      }
+    }
+
     try {
       if(signState==="sign UP"){
         await signup(name,email,password)
@@ -24,11 +45,21 @@ function Login() {
         await login(email,password)
       }
       navigate("/")
+    } catch (err) {
+      console.error("Authentication error:", err)
+      // show a readable message
+      const msg = err?.code ? err.code.split("/")[1].replace(/-/g, " ") : (err?.message || 'Authentication failed')
+      toast.error(msg)
+      setError(msg)
+    } finally {
       setLoading(false)
-     
-    } catch (error) {
-      console.error("Authentication error:", error)
-      setLoading(false)
+    }
+  }
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      user_auth()
     }
   }
 
@@ -40,12 +71,13 @@ function Login() {
       <img src={logo} alt="" className='login-logo' />
       <div className="login-form">
         <h2>{signState}</h2>
-        <form>
+        <form onSubmit={(e)=>{e.preventDefault()}} noValidate>
           {signState==="sign UP"?
-          <input type="text" placeholder=' Name' required value={name} onChange={(e)=>setName(e.target.value)} />:""}
-          <input type="email" placeholder='Email' required value={email} onChange={(e)=>setEmail(e.target.value)} />
-          <input type="password" placeholder='Password' required value={password} onChange={(e)=>setPassword(e.target.value)} />
-          <button type="submit" onClick={user_auth}>{signState}</button>
+          <input type="text" placeholder=' Name' value={name} onChange={(e)=>setName(e.target.value)} onKeyDown={handleKeyDown} />:""}
+          <input type="email" placeholder='Email' value={email} onChange={(e)=>setEmail(e.target.value)} onKeyDown={handleKeyDown} />
+          <input type="password" placeholder='Password' value={password} onChange={(e)=>setPassword(e.target.value)} onKeyDown={handleKeyDown} />
+          {error && <div className='form-error'>{error}</div>}
+          <button type="button" onClick={user_auth}>{signState}</button>
           <div className="form-help">
           <div className="remember">
             <input type="checkbox" />

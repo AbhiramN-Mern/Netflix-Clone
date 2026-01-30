@@ -3,7 +3,8 @@ import {
   getAuth, 
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword, 
-  signOut 
+  signOut,
+  updateProfile
 } from "firebase/auth";
 import { 
   getFirestore, 
@@ -31,6 +32,13 @@ const signup = async (name, email, password) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
+
+    // set the displayName on the Firebase Auth user so UI can read it via user.displayName
+    try{
+      await updateProfile(user, { displayName: name });
+    }catch(e){
+      console.warn('updateProfile failed', e);
+    }
 
     await addDoc(collection(db, "users"), {
       uid: user.uid,
