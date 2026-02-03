@@ -1,16 +1,45 @@
-# React + Vite
+#  Netflix Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Netflix-inspired web application built using **React**, powered by **TMDB API** for movie data and **Firebase Authentication** for user login and signup.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
 
-## React Compiler
+- **Frontend:** React
+- **API:** TMDB (The Movie Database)
+- **Authentication:** Firebase Authentication
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+##  Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- User authentication (Sign Up / Login / Logout)
+- Browse movies and TV shows
+- Dynamic movie rows by category
+- Movie details fetched in real-time from TMDB
+- Responsive UI (mobile + desktop)
+- Protected routes for authenticated users
+
+---
+
+##  Authentication
+
+Authentication is handled using **Firebase Auth**:
+- Email & Password login
+- Secure session handling
+- User state persistence
+
+---
+
+##  API Used
+
+- **TMDB API**
+  - Fetch trending movies
+  - Fetch category-wise content
+  - Fetch movie posters and metadata
+
+> You must create your own TMDB API key and Firebase project.
+
+---
+
