@@ -4,7 +4,7 @@ A Netflix-inspired web application built using **React**, powered by **TMDB API*
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **Frontend:** React
 - **API:** TMDB (The Movie Database)
@@ -39,7 +39,6 @@ Authentication is handled using **Firebase Auth**:
   - Fetch category-wise content
   - Fetch movie posters and metadata
 
-> You must create your own TMDB API key and Firebase project.
 
 ---
 
